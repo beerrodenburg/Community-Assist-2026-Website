@@ -11,3 +11,11 @@ public/assets/img/hero-people.png
 Community Assist Carousel.mov
 image.png
 image copy*.png
+
+# Build-phase reference material — kept locally, purged from the repo for client handoff.
+# (Removed from history too; restore from a backup bundle if ever needed.)
+COMMUNITYASSIST__2026.pdf
+CLAUDE.md
+BUILD-NOTES.md
+HANDOFF.md
+docs/
