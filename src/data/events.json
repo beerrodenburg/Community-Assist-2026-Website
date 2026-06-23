@@ -1,0 +1,34 @@
+{
+  "eyebrow": "The 2026 Events",
+  "heading": "The events.",
+  "cards": [
+    { "date": "12 Sep 2026", "name": "Merch Launch", "venue": "Luigi's", "blurb": "The 2026 merch drop, a pizza-making session and bocce.", "img": "/assets/img/event-merch.webp", "width": 900, "height": 635, "alt": "A long shared pizza on a table at a community gathering", "delay": "" },
+    { "date": "24 Oct 2026", "name": "3x3 Charity Basketball", "venue": "Our flagship tournament", "blurb": "Five years running. The event that started it all.", "img": "/assets/img/event-basketball.webp", "width": 800, "height": 467, "alt": "Players in a 3-on-3 basketball game", "delay": "d1" },
+    { "date": "Dec 2026", "name": "Auction Night", "venue": "Year-end celebration", "blurb": "20 exclusive lots, music and dinner to close out the year.", "img": "/assets/img/event-auction.webp", "width": 800, "height": 529, "alt": "A mirror ball held up to the light at an evening event", "delay": "d2" },
+    { "date": "TBA", "name": "Beach Games", "venue": "Times Beach Warung", "blurb": "Dodgeball, a sandcastle contest and a community market by the shore.", "img": "/assets/img/event-beach.webp", "width": 800, "height": 600, "alt": "People playing beach games on the sand in Bali", "delay": "d3" }
+  ],
+  "bePart": {
+    "heading": "Be part of the day",
+    "sub": "There's a way in for everyone, not just a cheque.",
+    "items": [
+      { "title": "Sponsor or donate", "text": "Back the day at any level.", "mailto": "mailto:communityassist@indosole.com?subject=Sponsor%20or%20donate%20at%20a%20Community%20Assist%20event" },
+      { "title": "Register a team", "text": "Rp 1,000,000 for 3 players + 2 reserves.", "mailto": "mailto:communityassist@indosole.com?subject=Register%20a%20basketball%20team" },
+      { "title": "Run a workshop", "text": "Share a skill or presentation.", "mailto": "mailto:communityassist@indosole.com?subject=Run%20a%20workshop%20at%20a%20Community%20Assist%20event" },
+      { "title": "Donate a prize", "text": "For the raffle or auction night.", "mailto": "mailto:communityassist@indosole.com?subject=Donate%20a%20raffle%20or%20auction%20prize" },
+      { "title": "Book a stall", "text": "Sell at the community market.", "mailto": "mailto:communityassist@indosole.com?subject=Book%20a%20community-market%20stall" }
+    ]
+  },
+  "pastEvents": {
+    "eyebrow": "Five years in",
+    "title": "A look back at the community we&rsquo;ve built.",
+    "photos": [
+      { "src": "/assets/img/pe-team.webp", "width": 1043, "height": 697, "alt": "A team of young players, arms around each other, on the court before a game", "delay": "" },
+      { "src": "/assets/img/pe-champion.webp", "width": 597, "height": 894, "alt": "A 2024 Champion basketball resting on a chair at Canggu Community School", "delay": "d1" },
+      { "src": "/assets/img/pe-drive.webp", "width": 501, "height": 750, "alt": "A player driving to the basket in motion during a 3x3 game", "delay": "d2" },
+      { "src": "/assets/img/pe-bleachers.webp", "width": 954, "height": 637, "alt": "Friends and supporters watching from the bleachers, courtside", "delay": "" },
+      { "src": "/assets/img/pe-swich.webp", "width": 469, "height": 625, "alt": "The Swich pop-up food stall at the charity tournament", "delay": "d1" },
+      { "src": "/assets/img/pe-masks.webp", "width": 955, "height": 637, "alt": "Finalists holding carved masks and trophies after the tournament", "delay": "d2" },
+      { "src": "/assets/img/pe-layup.webp", "width": 548, "height": 821, "alt": "A contested layup under the basket during a tournament game", "delay": "d3" }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "eyebrow": "Our Mission",
+  "heading": "Building bridges between people who want to help and kids who need it.",
+  "body": [
+    "Community Assist is a collective of Indonesian businesses, founded by <strong>Indosole</strong> and <strong>PNNY</strong>, raising funds to empower local communities through education, environment and opportunity.",
+    "Everything we raise goes to our partners' scholarship programs, helping children stay in school and build a future for themselves and their families."
+  ],
+  "collectiveEyebrow": "The collective behind it",
+  "collectiveHeading": "Founded by Bali businesses, powered by a foundation.",
+  "partners": [
+    {
+      "photo": "/assets/img/partners/indosole-team.webp",
+      "photoWidth": 960,
+      "photoHeight": 720,
+      "photoAlt": "The Indosole team gathered outside their store in Bali",
+      "portrait": false,
+      "logo": "/assets/img/partners/indosole-ink.webp",
+      "logoWidth": 467,
+      "logoHeight": 112,
+      "logoAlt": "Indosole",
+      "ragamLogo": false,
+      "role": "Founding partner",
+      "roleClass": "founding",
+      "text": "For over 17 years, Indosole has turned discarded tyres and river-collected sandals into recycled footwear, pioneering a future-forward model while creating jobs and community across Indonesia.",
+      "instagramUrl": "https://instagram.com/indosole",
+      "instagramHandle": "@indosole"
+    },
+    {
+      "photo": "/assets/img/partners/pnny-team.webp",
+      "photoWidth": 1280,
+      "photoHeight": 854,
+      "photoAlt": "The seven artists of the PNNY music collective",
+      "portrait": false,
+      "logo": "/assets/img/partners/pnny-ink.webp",
+      "logoWidth": 288,
+      "logoHeight": 99,
+      "logoAlt": "PNNY",
+      "ragamLogo": false,
+      "role": "Founding partner",
+      "roleClass": "founding",
+      "text": "Established in 2014, PNNY is Bali's home-grown collective of seven artists, curating the music events that have helped shape the island's scene, on both a local and international stage.",
+      "instagramUrl": "https://instagram.com/pnny_",
+      "instagramHandle": "@pnny_"
+    },
+    {
+      "photo": "/assets/img/partners/ragam-team.webp",
+      "photoWidth": 1088,
+      "photoHeight": 1360,
+      "photoAlt": "Ragam Foundation scholarship students and team at a Community Assist event",
+      "portrait": true,
+      "logo": "/assets/img/partners/ragam-logo.webp",
+      "logoWidth": 135,
+      "logoHeight": 209,
+      "logoAlt": "Ragam Foundation",
+      "ragamLogo": true,
+      "role": "Scholarship partner",
+      "roleClass": "scholar",
+      "text": "<em>\"Ragam\"</em> means <strong>diversity</strong>. The foundation connects people who want to give with communities who need support, and runs the educational scholarship program that every rupiah you give goes toward.",
+      "instagramUrl": "https://instagram.com/ragamfoundation",
+      "instagramHandle": "@ragamfoundation"
+    }
+  ]
+}

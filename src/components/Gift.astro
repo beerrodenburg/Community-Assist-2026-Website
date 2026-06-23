@@ -1,0 +1,36 @@
+---
+import gift from '../data/gift.json';
+const { donut } = gift;
+---
+
+<!-- ============ 5 · What your gift does ============ -->
+<section class="section" aria-labelledby="gift-h">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">{gift.eyebrow}</p>
+      <h2 class="h2" id="gift-h" set:html={gift.headingHtml} />
+    </div>
+    <div class="gift-grid">
+      <ul class="benefit-cards">
+        {gift.benefits.map((b) => (
+          <li class={`benefit reveal${b.delay ? ` ${b.delay}` : ''}`}>
+            <div class={`icon-tile ${b.tile}`}><svg viewBox="0 0 24 24" aria-hidden="true"><use href={`#${b.icon}`}/></svg></div>
+            <h3>{b.title}</h3><p>{b.text}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="gift-panel reveal d2">
+        <div class="donut-wrap">
+          <div class="donut" role="img" aria-label={donut.ariaLabel}></div>
+          <div class="donut-center"><span class="dc-num">{donut.centerNum}</span><span class="dc-label">{donut.centerLabel}</span></div>
+        </div>
+        <ul class="donut-legend">
+          {donut.legend.map((l) => (
+            <li><span class="swatch" style={`background:${l.swatch}`}></span> {l.label}</li>
+          ))}
+        </ul>
+        <p class="transparency" set:html={donut.transparencyHtml} />
+      </div>
+    </div>
+  </div>
+</section>

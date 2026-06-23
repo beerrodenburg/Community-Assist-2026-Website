@@ -1,0 +1,72 @@
+{
+  "eyebrow": "Ways to Give",
+  "heading": "Two ways to change a life. Pick yours.",
+  "individuals": {
+    "headingHtml": "Give once, or monthly. <br>Any level helps.",
+    "lead": "Every contribution is measured in scholarships. Pick a level and see exactly how many kids you send to school.",
+    "cta": { "label": "Donate as an individual", "href": "#donate" },
+    "ladder": [
+      { "amt": "Rp 1M", "val": "⅙ of a scholarship", "highlight": false, "badge": "" },
+      { "amt": "Rp 6M", "val": "1 full year of school", "highlight": true, "badge": "Sponsor a child" },
+      { "amt": "Rp 12M", "val": "2 scholarships", "highlight": false, "badge": "" },
+      { "amt": "Rp 24M", "val": "4 scholarships", "highlight": false, "badge": "" },
+      { "amt": "Rp 60M", "val": "10 scholarships", "highlight": false, "badge": "" },
+      { "amt": "Rp 120M", "val": "20 scholarships", "highlight": false, "badge": "" }
+    ]
+  },
+  "businesses": {
+    "tiers": [
+      {
+        "name": "Community",
+        "price": "Rp 20M",
+        "scholarships": "3 children's scholarships",
+        "featured": false,
+        "star": false,
+        "badge": "",
+        "features": [
+          "Logo on event banners",
+          "Small logo on street banners",
+          "One banner set on-site",
+          "Group post + story mention"
+        ],
+        "mailto": "mailto:communityassist@indosole.com?subject=Community%20sponsorship%20(Rp%2020M)",
+        "ctaLabel": "Become a sponsor"
+      },
+      {
+        "name": "Game Changer",
+        "price": "Rp 60M",
+        "scholarships": "10 children's scholarships",
+        "featured": false,
+        "star": false,
+        "badge": "",
+        "features": [
+          "Logo on posters, tickets & flyers",
+          "Large logo on a banner",
+          "Two banners + a standee",
+          "Live PA announcement",
+          "Dedicated carousel slide + story"
+        ],
+        "mailto": "mailto:communityassist@indosole.com?subject=Game%20Changer%20sponsorship%20(Rp%2060M)",
+        "ctaLabel": "Become a sponsor"
+      },
+      {
+        "name": "Champion",
+        "price": "Rp 120M",
+        "scholarships": "20 scholarships + event naming rights",
+        "featured": true,
+        "star": true,
+        "badge": "Most impact",
+        "features": [
+          "Largest logo on all materials + halftime",
+          "Premium street-banner placement",
+          "Entrance & court banners + activation booth",
+          "Live PA + company spotlight",
+          "30s Reel + 8-slide carousel + story"
+        ],
+        "mailto": "mailto:communityassist@indosole.com?subject=Champion%20sponsorship%20(Rp%20120M)",
+        "ctaLabel": "Become a sponsor"
+      }
+    ],
+    "partnerNoteHtml": "Prefer a yearly bundle? The <strong>Community Partner</strong> package (Rp 20M/yr) adds full event registration, 2 auction-dinner tickets and quarterly marketing support. <a href=\"mailto:communityassist@indosole.com?subject=Community%20Partner%20package%20(Rp%2020M%2Fyr)\">Talk to us →</a>"
+  }
+}

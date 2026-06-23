@@ -1,0 +1,31 @@
+---
+import donate from '../data/donate.json';
+const { bank } = donate;
+---
+
+<!-- ============ 10 · Final CTA / How to donate ============ -->
+<section class="final section" id="donate" aria-labelledby="final-h">
+  <div class="wrap">
+    <div class="final-grid">
+      <div class="reveal">
+        <h2 class="h2" id="final-h">{donate.heading}</h2>
+        <p class="f-sub">{donate.sub}</p>
+        <div class="final-cta">
+          <a href={donate.talkCta.href} class="btn btn--white btn--lg">{donate.talkCta.label}</a>
+        </div>
+      </div>
+      <div class="bank-card reveal d2" id="donate-card">
+        <div class="bc-head"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg> {bank.title}</div>
+        {bank.fields.map((f) => (
+          <div class="bank-field">
+            <div><div class="bf-label">{f.label}</div><div class="bf-value">{f.value}</div></div>
+            <button class="copy-btn" data-copy={f.copy} aria-label={f.aria}><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-copy"/></svg><span class="copied-tip">Copied!</span></button>
+          </div>
+        ))}
+        {bank.notes.map((n) => <p class="bank-note" set:html={n} />)}
+        <p class="bank-contact" set:html={bank.contactHtml} />
+      </div>
+    </div>
+    <p class="final-signoff reveal">{donate.signoff} <svg viewBox="0 0 24 24" width="22" style="color:var(--yellow);vertical-align:-3px" aria-hidden="true"><use href="#i-heart"/></svg></p>
+  </div>
+</section>

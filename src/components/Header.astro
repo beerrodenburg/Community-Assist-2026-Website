@@ -1,0 +1,24 @@
+---
+import site from '../data/site.json';
+---
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Community Assist — home">
+      <svg class="brand-full" viewBox="0 0 519.508 430.884" aria-hidden="true"><use href="#i-logo-full"/></svg>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="nav-right">
+      <a href="#donate" class="btn btn--primary nav-cta">{site.donateLabel}</a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-sheet"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-sheet" id="mobile-sheet" aria-label="Menu">
+  {site.nav.map((item) => <a class="m-link" href={item.href}>{item.label}</a>)}
+  <a class="btn btn--primary btn--lg" href="#donate">{site.donateLabel}</a>
+</div>

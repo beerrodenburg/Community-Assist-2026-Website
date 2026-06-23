@@ -1,0 +1,21 @@
+---
+import site from '../data/site.json';
+const { contact, footer } = site;
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="f-logo"><svg class="f-logo-full" viewBox="0 0 519.508 430.884" role="img" aria-label="Community Assist"><use href="#i-logo-full"/></svg></div>
+      <p class="footer-benef">{footer.beneficiaries}</p>
+      <nav class="footer-contact">
+        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        <a href={contact.whatsappUrl} target="_blank" rel="noopener">{contact.whatsapp}</a>
+        <a href={contact.instagramUrl} target="_blank" rel="noopener">{contact.instagramLabel}</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>{footer.legal}</span>
+    </div>
+  </div>
+</footer>

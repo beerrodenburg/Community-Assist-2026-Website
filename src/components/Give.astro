@@ -1,0 +1,62 @@
+---
+import give from '../data/give.json';
+const { individuals, businesses } = give;
+---
+
+<!-- ============ 7 · Ways to Give ============ -->
+<section class="section" id="give" aria-labelledby="give-h">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center">{give.eyebrow}</p>
+      <h2 class="h2" id="give-h">{give.heading}</h2>
+    </div>
+
+    <div class="tab-center reveal">
+      <div class="tabs" role="tablist" aria-label="Ways to give">
+        <button class="tab tab-ind" role="tab" id="tab-ind" aria-selected="true" aria-controls="panel-ind">For individuals</button>
+        <button class="tab tab-biz" role="tab" id="tab-biz" aria-selected="false" aria-controls="panel-biz" tabindex="-1">For businesses</button>
+      </div>
+    </div>
+
+    <!-- Individuals -->
+    <div class="tabpanel active" id="panel-ind" role="tabpanel" aria-labelledby="tab-ind">
+      <div class="give-ind">
+        <div class="give-intro">
+          <h3 class="h3" set:html={individuals.headingHtml} />
+          <p class="lead" style="margin-top:14px">{individuals.lead}</p>
+          <a href={individuals.cta.href} class="btn btn--primary btn--lg">{individuals.cta.label}</a>
+        </div>
+        <ul class="ladder">
+          {individuals.ladder.map((r, i) => (
+            r.highlight ? (
+              <li class="rung highlight"><span class="r-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-heart"/></svg> {r.badge}</span><span class="r-amt">{r.amt}</span><span class="r-val">{r.val}</span></li>
+            ) : (
+              <li class={`rung r${i + 1}`}><span class="r-amt">{r.amt}</span><span class="r-val">{r.val}</span></li>
+            )
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Businesses -->
+    <div class="tabpanel" id="panel-biz" role="tabpanel" aria-labelledby="tab-biz" hidden>
+      <div class="tiers">
+        {businesses.tiers.map((t) => (
+          <article class={`tier${t.featured ? ' featured' : ''}`}>
+            {t.badge && <span class="t-badge">{t.badge}</span>}
+            <div class="t-name">{t.star ? (<Fragment><svg viewBox="0 0 24 24" width="16" aria-hidden="true"><use href="#i-star"/></svg> {t.name}</Fragment>) : t.name}</div>
+            <div class="t-price">{t.price}</div>
+            <div class="t-schol">{t.scholarships}</div>
+            <ul class="t-feats">
+              {t.features.map((f) => (
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg> {f}</li>
+              ))}
+            </ul>
+            <a href={t.mailto} class={`btn ${t.featured ? 'btn--primary' : 'btn--outline'} btn--block`}>{t.ctaLabel}</a>
+          </article>
+        ))}
+      </div>
+      <p class="give-biz-cta muted" set:html={businesses.partnerNoteHtml} />
+    </div>
+  </div>
+</section>

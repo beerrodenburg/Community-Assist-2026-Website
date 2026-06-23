@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Community Assist — Turn community into opportunity | Bali",
+    "description": "Community Assist is a Bali collective that turns community events into education, raising funds so kids who can't afford school, can. Donate or sponsor a child today.",
+    "themeColor": "#4661AD",
+    "ogTitle": "Community Assist — Turn community into opportunity",
+    "ogDescription": "A Bali collective turning events into education. Rp 6 million sends one child to school for a whole year. Donate or sponsor a child.",
+    "ogImage": "/assets/img/hero.webp",
+    "url": "https://www.communityassistbali.com/"
+  },
+  "nav": [
+    { "label": "Our Mission", "href": "#mission" },
+    { "label": "Impact", "href": "#impact" },
+    { "label": "Ways to Give", "href": "#give" },
+    { "label": "Events", "href": "#events" },
+    { "label": "Sponsors", "href": "#sponsors" }
+  ],
+  "donateLabel": "Donate",
+  "contact": {
+    "email": "communityassist@indosole.com",
+    "whatsapp": "+62 812-3760-9071",
+    "whatsappUrl": "https://wa.me/6281237609071",
+    "instagramUrl": "https://www.instagram.com/communityassistbali/",
+    "instagramLabel": "Instagram @communityassistbali"
+  },
+  "footer": {
+    "beneficiaries": "In support of the Ragam Foundation & Green School Foundation scholarship programs.",
+    "legal": "© 2026 Community Assist · We use your details only to process your gift and send your receipt."
+  }
+}

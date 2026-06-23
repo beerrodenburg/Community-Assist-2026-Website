@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+import site from '../data/site.json';
+import hero from '../data/hero.json';
+import Sprite from '../components/Sprite.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { meta } = site;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{meta.title}</title>
+  <meta name="description" content={meta.description} />
+  <meta name="theme-color" content={meta.themeColor} />
+
+  <!-- Preload the LCP hero image so it isn't discovered behind the render-blocking font CSS -->
+  <link rel="preload" as="image" href={hero.image} fetchpriority="high" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={meta.ogTitle} />
+  <meta property="og:description" content={meta.ogDescription} />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content={meta.ogImage} />
+  <meta property="og:url" content={meta.url} />
+
+  <link rel="icon" href="/assets/heart-mark.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/heart-mark.svg" />
+
+  <!-- Fonts: General Sans (display) + Inter (body) + Caveat (marker accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@600,700,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <Sprite />
+  <Header />
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <Footer />
+
+  <script is:inline src="/main.js"></script>
+</body>
+</html>

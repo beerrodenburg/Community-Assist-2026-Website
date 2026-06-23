@@ -1,0 +1,29 @@
+{
+  "eyebrow": "Our Sponsors",
+  "heading": "Powered by 200+ Bali businesses.",
+  "lead": "Every sponsorship is remembered. We make sure our community knows who makes this possible.",
+  "champions": [
+    { "src": "/assets/img/partners/homes-by-heffry-white.webp", "alt": "Homes by Heffry", "width": 516, "height": 108, "color": false },
+    { "src": "/assets/img/partners/under-armour-white.webp", "alt": "Under Armour", "width": 436, "height": 116, "color": false },
+    { "src": "/assets/img/partners/nuanu-social-fund-white.webp", "alt": "Nuanu Social Fund", "width": 673, "height": 116, "color": false },
+    { "src": "/assets/img/partners/project-black-white.webp", "alt": "Project: Black", "width": 602, "height": 68, "color": false }
+  ],
+  "gameChangers": [
+    { "src": "/assets/img/partners/oshom-white.webp", "alt": "Oshom", "width": 648, "height": 508, "color": false },
+    { "src": "/assets/img/partners/yuki-white.webp", "alt": "YUKI", "width": 2183, "height": 666, "color": false },
+    { "src": "/assets/img/partners/swich.webp", "alt": "Swich", "width": 320, "height": 320, "color": true },
+    { "src": "/assets/img/partners/tacos-aqui-white.webp", "alt": "Tacos Aqui", "width": 340, "height": 108, "color": false },
+    { "src": "/assets/img/partners/room4dessert-white.webp", "alt": "Room4Dessert", "width": 600, "height": 506, "color": false },
+    { "src": "/assets/img/partners/the-boogaloo-white.webp", "alt": "The Boogaloo", "width": 628, "height": 244, "color": false },
+    { "src": "/assets/img/partners/hey-rcg-ink.webp", "alt": "hey RCG", "width": 1077, "height": 378, "color": false },
+    { "src": "/assets/img/partners/mason-adventures.webp", "alt": "Mason Adventures Bali", "width": 512, "height": 512, "color": true },
+    { "src": "/assets/img/partners/better-hospitality-ink.webp", "alt": "Better Hospitality Reviews", "width": 560, "height": 284, "color": false },
+    { "src": "/assets/img/partners/smoke-ink.svg", "alt": "Smoke", "width": 113, "height": 34, "color": false }
+  ],
+  "communityHeroes": [
+    "ARTE", "Noema", "CS Dental", "Kilo Seminyak", "Le Pirate", "Luigi's Hot Pizza", "KYND", "Kura Kura", "Palapa", "Pound 4 Pound Dojo", "Red Gunpowder", "Bramble Living", "Tale of Two", "Woods", "Yogurt Republic", "ZOZO", "Uma Sapna", "Sunset Beach", "Jiwa Yoga", "Body Factory Bali", "Bali Food & Travel", "Potato Head", "Bodyworks Spa", "Boy N Cow", "Sasanawana Eco Lodge", "Rise & Shine", "Recovr", "Palm Four", "Island Brewing", "Sienna", "Televisi Star", "Barefoot", "69 Slam", "FaceDay", "Waterbom Bali", "Hotel Indigo", "Indigo Kids", "The Dose Bali"
+  ],
+  "communityHeroesMore": "+ 150 more local businesses",
+  "ctaText": "Want your logo here?",
+  "ctaLink": { "label": "Become a sponsor →", "href": "#give" }
+}

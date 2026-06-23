@@ -1,0 +1,9 @@
+# Netlify build settings for the Astro static site.
+# Decap CMS lives at /admin (static files in public/admin) and commits to GitHub,
+# which triggers this build and redeploys the site.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

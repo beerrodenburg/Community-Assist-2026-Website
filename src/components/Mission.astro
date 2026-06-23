@@ -1,0 +1,37 @@
+---
+import mission from '../data/mission.json';
+---
+
+<!-- ============ 3 · Mission ============ -->
+<section class="section" id="mission" aria-labelledby="mission-h">
+  <div class="wrap">
+    <div class="mission-copy reveal">
+      <p class="eyebrow">{mission.eyebrow}</p>
+      <h2 class="h2" id="mission-h">{mission.heading}</h2>
+      {mission.body.map((p, i) => (
+        <p class="lead" style={i === 0 ? 'margin-top:22px' : 'margin-top:1em'} set:html={p} />
+      ))}
+    </div>
+
+    <div class="partners-intro reveal">
+      <p class="eyebrow">{mission.collectiveEyebrow}</p>
+      <h3 class="h3" id="partners-h">{mission.collectiveHeading}</h3>
+    </div>
+
+    <ul class="partner-rows" aria-labelledby="partners-h">
+      {mission.partners.map((p) => (
+        <li class="prow reveal">
+          <figure class={`prow-photo${p.portrait ? ' prow-photo--portrait' : ''}`}>
+            <img src={p.photo} width={p.photoWidth} height={p.photoHeight} alt={p.photoAlt} loading="lazy" />
+          </figure>
+          <div class="prow-body">
+            <img class={`prow-logo${p.ragamLogo ? ' prow-logo--ragam' : ''}`} src={p.logo} width={p.logoWidth} height={p.logoHeight} alt={p.logoAlt} loading="lazy" />
+            <span class={`p-role ${p.roleClass}`}>{p.role}</span>
+            <p class="prow-text" set:html={p.text} />
+            <a class="prow-ig" href={p.instagramUrl} target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ig"/></svg>{p.instagramHandle}</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

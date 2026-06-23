@@ -1,0 +1,24 @@
+---
+import hero from '../data/hero.json';
+---
+
+<!-- ============ 1 · Hero ============ -->
+<section class="hero" aria-labelledby="hero-h">
+  <h1 id="hero-h" class="sr-only">{hero.srHeading}</h1>
+  <div class="hero-banner reveal">
+    <img class="hero-slide" src={hero.image} width={hero.imageWidth} height={hero.imageHeight} fetchpriority="high" alt={hero.imageAlt} />
+    <div class="hero-overlay">
+      <div class="hero-overlay-inner">
+        <div class="hero-cta">
+          <a href={hero.primaryCta.href} class="btn btn--primary btn--lg">{hero.primaryCta.label}</a>
+          <a href={hero.secondaryCta.href} class="btn btn--ghost-light btn--lg">{hero.secondaryCta.label}</a>
+        </div>
+        <p class="trust-chip trust-chip--hero">
+          {hero.trustChips.map((c) => (
+            <span class="trust-item"><span class="dot"></span><b>{c.value}</b> {c.label}</span>
+          ))}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

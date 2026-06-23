@@ -1,8 +1,13 @@
 .DS_Store
 
+# Build output / dependencies
+node_modules/
+dist/
+.astro/
+
 # Heavy / stray source files that must NOT ship to the public web root.
-# (The page references the optimised assets/img/*.webp, never these.)
+# (The page references the optimised public/assets/img/*.webp, never these.)
+public/assets/img/hero-people.png
 Community Assist Carousel.mov
-assets/img/hero-people.png
 image.png
 image copy*.png

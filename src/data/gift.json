@@ -1,0 +1,21 @@
+{
+  "eyebrow": "Where your money goes",
+  "headingHtml": "<span class=\"mark-yellow\">Rp 6 million</span> sends one child to school for a whole year.",
+  "benefits": [
+    { "icon": "i-cap", "tile": "t-pink", "title": "Quality education", "text": "A full year of tuition for one student.", "delay": "" },
+    { "icon": "i-book", "tile": "t-blue", "title": "Learning materials", "text": "The essentials: books, pens, and a backpack.", "delay": "d1" },
+    { "icon": "i-shirt", "tile": "t-yellow", "title": "School uniform", "text": "A complete uniform so they fit in and show up.", "delay": "d2" },
+    { "icon": "i-mentor", "tile": "t-pink", "title": "A dedicated mentor", "text": "A community manager guiding each child's progress.", "delay": "d3" }
+  ],
+  "donut": {
+    "centerNum": "30",
+    "centerLabel": "students",
+    "ariaLabel": "Scholarship mix: 18 middle-school, 8 high-school, 4 university students",
+    "legend": [
+      { "swatch": "var(--blue)", "label": "18 middle-school" },
+      { "swatch": "var(--orchid)", "label": "8 high-school" },
+      { "swatch": "var(--yellow)", "label": "4 university" }
+    ],
+    "transparencyHtml": "<b>69% of every rupiah</b> goes straight to the scholarship program."
+  }
+}

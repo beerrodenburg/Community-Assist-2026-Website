@@ -1,0 +1,25 @@
+---
+import cred from '../data/credibility.json';
+---
+
+<!-- ============ 2 · Credibility band ============ -->
+<section class="cred section section--tight" aria-label="Our impact in numbers">
+  <div class="wrap">
+    <div class="cred-stats">
+      {cred.stats.map((s, i) => (
+        <div class={`stat reveal${i > 0 ? ` d${i}` : ''}`}>
+          <div class="stat-num">{s.accent ? <span class="accent">{s.num}</span> : s.num}</div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))}
+    </div>
+    <div class="cred-logos reveal">
+      <p class="ll-label">{cred.partnersLabel}</p>
+      <div class="logo-row">
+        {cred.partnerLogos.map((l) => (
+          <img class="plogo" src={l.src} width={l.width} height={l.height} alt={l.alt} loading="lazy" />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

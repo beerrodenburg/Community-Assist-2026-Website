@@ -1,0 +1,44 @@
+{
+  "eyebrow": "Stories of Impact",
+  "heading": "What your support makes possible.",
+  "feature": {
+    "tag": "From scholarship to graduate",
+    "name": "Chintya",
+    "poster": "/assets/img/impact-chintya.webp",
+    "posterWidth": 665,
+    "posterHeight": 520,
+    "videoWebm": "/assets/video/chintya.webm",
+    "videoMp4": "/assets/video/chintya.mp4",
+    "videoAlt": "Ni Putu Chintya Pratiwi in cap and gown sharing her graduation testimonial",
+    "posterAlt": "Ni Putu Chintya Pratiwi in cap and gown holding a Happy Graduation sign",
+    "paragraphs": [
+      "Ni Putu Chintya Pratiwi just graduated in accounting from Universitas Mahasaraswati Denpasar, and two weeks later she had already accepted her first job at an accounting firm.",
+      "Covering her education costs freed her family to build their own security. Her mum opened a laundry business that's now thriving, so she no longer has to clean kos to get by. When COVID cut her dad's salary in half, the program's extra help with clothes, school supplies, and a water filter carried them through the hardest stretch.",
+      "Today her dad's income has recovered, her mum has a steady business of her own, and Chintya contributes fully from her new job. The family now supports itself and is putting her two younger brothers through school. One scholarship, a whole family's future."
+    ]
+  },
+  "sideStories": [
+    {
+      "tag": "Top of her class",
+      "name": "Indah",
+      "img": "/assets/img/impact-indah.webp",
+      "width": 807,
+      "height": 1076,
+      "objectPosition": "50% 70%",
+      "alt": "Indah, a high-school student in Denpasar",
+      "text": "Indah is the firstborn of two, and a high-schooler at SMA Saraswati Denpasar. She keeps top grades while leading the student council and theatre club, and still finds time to tutor younger children to help her parents earn extra income. She dreams of becoming a tax officer.",
+      "delay": "d1"
+    },
+    {
+      "tag": "Back in the classroom",
+      "name": "Wahyu",
+      "img": "/assets/img/impact-wahyu.webp",
+      "width": 675,
+      "height": 1012,
+      "objectPosition": "50% 15%",
+      "alt": "Wahyu, a middle-school student in his school uniform",
+      "text": "Thanks to supporters last year, Wahyu received a Ragam Foundation scholarship through Community Assist 2024, and he's back in school, now in 8th grade. With another year of support he'll finish his studies, and that same chance can reach more children across Bali.",
+      "delay": "d2"
+    }
+  ]
+}

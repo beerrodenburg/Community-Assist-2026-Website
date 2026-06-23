@@ -1,0 +1,443 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Decap CMS configuration — Community Assist
+# Auth + Git Gateway via DecapBridge (https://decapbridge.com).
+#
+# ⚠️ BEFORE LOGIN WORKS (do this at handoff, against the CLIENT's GitHub repo):
+#   1. Sign in at https://decapbridge.com and "Create site" pointing at the repo.
+#   2. It generates three values — paste them into the backend block below:
+#        repo, identity_url, gateway_url
+#   3. Invite the client by email from the DecapBridge dashboard.
+#   Until those values are filled in, the /admin login screen will not work.
+#
+# HOW EDITING WORKS: the client edits the fields below → Decap commits the changed
+# JSON in src/data/ to GitHub → Netlify rebuilds → the live site updates.
+#
+# ⚠️ Decap rewrites each JSON file using ONLY the fields defined here. Every key in
+#    the data files is represented below — do not delete fields or data will be lost.
+# ─────────────────────────────────────────────────────────────────────────────
+
+backend:
+  name: git-gateway
+  repo: OWNER/REPO                                                # ← from DecapBridge
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/YOUR_SITE_ID   # ← from DecapBridge
+  gateway_url: https://gateway.decapbridge.com                    # ← from DecapBridge
+  commit_messages:
+    create: 'Update {{collection}} via CMS'
+    update: 'Update {{collection}} via CMS'
+    delete: 'Delete {{collection}} via CMS'
+    uploadMedia: 'Upload {{path}} via CMS'
+    deleteMedia: 'Delete {{path}} via CMS'
+
+# Adds a "View live" link inside the editor.
+site_url: https://www.communityassistbali.com
+display_url: https://www.communityassistbali.com
+
+# New image uploads land here; existing images in this folder are browsable too.
+media_folder: "public/assets/img"
+public_folder: "/assets/img"
+
+locale: "en"
+
+collections:
+  # ── Global settings ────────────────────────────────────────────────────────
+  - name: "settings"
+    label: "Site settings"
+    editor:
+      preview: false
+    files:
+      - file: "src/data/site.json"
+        name: "site"
+        label: "Site & SEO"
+        fields:
+          - label: "SEO / social"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "Browser title", name: "title", widget: "string" }
+              - { label: "Meta description", name: "description", widget: "text" }
+              - { label: "Theme colour (hex)", name: "themeColor", widget: "string" }
+              - { label: "Social share title", name: "ogTitle", widget: "string" }
+              - { label: "Social share description", name: "ogDescription", widget: "text" }
+              - { label: "Social share image", name: "ogImage", widget: "image" }
+              - { label: "Canonical URL", name: "url", widget: "string" }
+          - label: "Navigation links"
+            name: "nav"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Anchor (href)", name: "href", widget: "string" }
+          - { label: "Donate button label", name: "donateLabel", widget: "string" }
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "WhatsApp (display)", name: "whatsapp", widget: "string" }
+              - { label: "WhatsApp link", name: "whatsappUrl", widget: "string" }
+              - { label: "Instagram link", name: "instagramUrl", widget: "string" }
+              - { label: "Instagram label", name: "instagramLabel", widget: "string" }
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Beneficiaries line", name: "beneficiaries", widget: "text" }
+              - { label: "Legal line", name: "legal", widget: "text" }
+
+  # ── Page sections ──────────────────────────────────────────────────────────
+  - name: "sections"
+    label: "Page sections"
+    editor:
+      preview: false
+    files:
+      # 1 · Hero
+      - file: "src/data/hero.json"
+        name: "hero"
+        label: "1 · Hero"
+        fields:
+          - { label: "Screen-reader heading", name: "srHeading", widget: "text" }
+          - { label: "Hero image", name: "image", widget: "image" }
+          - { label: "Image width (px)", name: "imageWidth", widget: "number", required: false, value_type: "int" }
+          - { label: "Image height (px)", name: "imageHeight", widget: "number", required: false, value_type: "int" }
+          - { label: "Image alt text", name: "imageAlt", widget: "text" }
+          - label: "Primary button"
+            name: "primaryCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Secondary button"
+            name: "secondaryCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Trust chips"
+            name: "trustChips"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+
+      # 2 · Credibility band
+      - file: "src/data/credibility.json"
+        name: "credibility"
+        label: "2 · Credibility band"
+        fields:
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Accent colour?", name: "accent", widget: "boolean", default: false }
+          - { label: "Partners label", name: "partnersLabel", widget: "string" }
+          - label: "Partner logos"
+            name: "partnerLogos"
+            widget: "list"
+            fields:
+              - { label: "Logo", name: "src", widget: "image" }
+              - { label: "Alt text", name: "alt", widget: "string" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+
+      # 3 · Mission
+      - file: "src/data/mission.json"
+        name: "mission"
+        label: "3 · Mission"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Body paragraphs"
+            name: "body"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text", hint: "HTML allowed (e.g. <strong>)" }
+          - { label: "Collective eyebrow", name: "collectiveEyebrow", widget: "string" }
+          - { label: "Collective heading", name: "collectiveHeading", widget: "string" }
+          - label: "Partners"
+            name: "partners"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Photo width", name: "photoWidth", widget: "number", required: false, value_type: "int" }
+              - { label: "Photo height", name: "photoHeight", widget: "number", required: false, value_type: "int" }
+              - { label: "Photo alt", name: "photoAlt", widget: "string" }
+              - { label: "Portrait crop?", name: "portrait", widget: "boolean", default: false }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Logo width", name: "logoWidth", widget: "number", required: false, value_type: "int" }
+              - { label: "Logo height", name: "logoHeight", widget: "number", required: false, value_type: "int" }
+              - { label: "Logo alt", name: "logoAlt", widget: "string" }
+              - { label: "Ragam logo style?", name: "ragamLogo", widget: "boolean", default: false }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Role style", name: "roleClass", widget: "select", options: ["founding", "scholar"] }
+              - { label: "Description", name: "text", widget: "text", hint: "HTML allowed (e.g. <em>, <strong>)" }
+              - { label: "Instagram URL", name: "instagramUrl", widget: "string" }
+              - { label: "Instagram handle", name: "instagramHandle", widget: "string" }
+
+      # 4 · Impact stories
+      - file: "src/data/impact.json"
+        name: "impact"
+        label: "4 · Impact stories"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Feature story (video)"
+            name: "feature"
+            widget: "object"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Poster image", name: "poster", widget: "image" }
+              - { label: "Poster width", name: "posterWidth", widget: "number", required: false, value_type: "int" }
+              - { label: "Poster height", name: "posterHeight", widget: "number", required: false, value_type: "int" }
+              - { label: "Video (WebM)", name: "videoWebm", widget: "file", required: false }
+              - { label: "Video (MP4)", name: "videoMp4", widget: "file", required: false }
+              - { label: "Video aria-label", name: "videoAlt", widget: "string" }
+              - { label: "Poster alt", name: "posterAlt", widget: "string" }
+              - label: "Paragraphs"
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Side stories"
+            name: "sideStories"
+            widget: "list"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Image", name: "img", widget: "image" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+              - { label: "Image focus (object-position)", name: "objectPosition", widget: "string", required: false }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Animation delay", name: "delay", widget: "hidden" }
+
+      # 5 · What your gift does
+      - file: "src/data/gift.json"
+        name: "gift"
+        label: "5 · What your gift does"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "headingHtml", widget: "string", hint: "HTML allowed" }
+          - label: "Benefit cards"
+            name: "benefits"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "icon", widget: "select", options: ["i-cap", "i-book", "i-shirt", "i-mentor", "i-heart", "i-star", "i-check"] }
+              - { label: "Tile colour", name: "tile", widget: "select", options: ["t-pink", "t-blue", "t-yellow"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Animation delay", name: "delay", widget: "hidden" }
+          - label: "Scholarship donut"
+            name: "donut"
+            widget: "object"
+            fields:
+              - { label: "Centre number", name: "centerNum", widget: "string" }
+              - { label: "Centre label", name: "centerLabel", widget: "string" }
+              - { label: "Chart aria-label", name: "ariaLabel", widget: "string" }
+              - label: "Legend"
+                name: "legend"
+                widget: "list"
+                fields:
+                  - { label: "Swatch colour", name: "swatch", widget: "select", options: ["var(--blue)", "var(--orchid)", "var(--yellow)", "var(--pink)", "var(--green)"] }
+                  - { label: "Label", name: "label", widget: "string" }
+              - { label: "Transparency line", name: "transparencyHtml", widget: "string", hint: "HTML allowed" }
+
+      # 6 · 2026 goal
+      - file: "src/data/goal.json"
+        name: "goal"
+        label: "6 · 2026 goal"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Goal amount", name: "amount", widget: "string" }
+          - { label: "Sub-line", name: "subHtml", widget: "string", hint: "HTML allowed" }
+          - { label: "Progress (%)", name: "progress", widget: "number", value_type: "int", min: 0, max: 100 }
+          - { label: "Progress label", name: "progressLabelLeft", widget: "string" }
+          - { label: "Student image (left)", name: "studentLeft", widget: "image" }
+          - { label: "Student left width", name: "studentLeftWidth", widget: "number", required: false, value_type: "int" }
+          - { label: "Student left height", name: "studentLeftHeight", widget: "number", required: false, value_type: "int" }
+          - { label: "Student image (right)", name: "studentRight", widget: "image" }
+          - { label: "Student right width", name: "studentRightWidth", widget: "number", required: false, value_type: "int" }
+          - { label: "Student right height", name: "studentRightHeight", widget: "number", required: false, value_type: "int" }
+          - label: "Primary button"
+            name: "primaryCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Secondary button"
+            name: "secondaryCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+
+      # 7 · Ways to Give
+      - file: "src/data/give.json"
+        name: "give"
+        label: "7 · Ways to Give"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "For individuals"
+            name: "individuals"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "headingHtml", widget: "string", hint: "HTML allowed (e.g. <br>)" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - label: "Button"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+              - label: "Donor ladder"
+                name: "ladder"
+                widget: "list"
+                fields:
+                  - { label: "Amount", name: "amt", widget: "string" }
+                  - { label: "Value", name: "val", widget: "string" }
+                  - { label: "Highlighted?", name: "highlight", widget: "boolean", default: false }
+                  - { label: "Badge text", name: "badge", widget: "string", required: false }
+          - label: "For businesses"
+            name: "businesses"
+            widget: "object"
+            fields:
+              - label: "Tiers"
+                name: "tiers"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+                  - { label: "Scholarships line", name: "scholarships", widget: "string" }
+                  - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+                  - { label: "Star icon?", name: "star", widget: "boolean", default: false }
+                  - { label: "Badge text", name: "badge", widget: "string", required: false }
+                  - label: "Features"
+                    name: "features"
+                    widget: "list"
+                    field: { label: "Feature", name: "feature", widget: "string" }
+                  - { label: "Email link (mailto)", name: "mailto", widget: "string" }
+                  - { label: "Button label", name: "ctaLabel", widget: "string" }
+              - { label: "Partner note", name: "partnerNoteHtml", widget: "text", hint: "HTML allowed" }
+
+      # 8 · Events
+      - file: "src/data/events.json"
+        name: "events"
+        label: "8 · Events"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Event cards"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Venue", name: "venue", widget: "string" }
+              - { label: "Blurb", name: "blurb", widget: "text" }
+              - { label: "Image", name: "img", widget: "image" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Animation delay", name: "delay", widget: "hidden" }
+          - label: "Be part of the day"
+            name: "bePart"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Sub", name: "sub", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Email link (mailto)", name: "mailto", widget: "string" }
+          - label: "Past events"
+            name: "pastEvents"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string", hint: "HTML allowed" }
+              - label: "Photos"
+                name: "photos"
+                widget: "list"
+                fields:
+                  - { label: "Photo", name: "src", widget: "image" }
+                  - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+                  - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+                  - { label: "Alt", name: "alt", widget: "string" }
+                  - { label: "Animation delay", name: "delay", widget: "hidden" }
+
+      # 9 · Sponsors
+      - file: "src/data/sponsors.json"
+        name: "sponsors"
+        label: "9 · Sponsors"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Lead", name: "lead", widget: "text" }
+          - label: "Champions"
+            name: "champions"
+            widget: "list"
+            fields:
+              - { label: "Logo", name: "src", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+              - { label: "Full colour?", name: "color", widget: "boolean", default: false }
+          - label: "Game Changers"
+            name: "gameChangers"
+            widget: "list"
+            fields:
+              - { label: "Logo", name: "src", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+              - { label: "Full colour?", name: "color", widget: "boolean", default: false }
+          - label: "Community Heroes"
+            name: "communityHeroes"
+            widget: "list"
+            field: { label: "Business name", name: "name", widget: "string" }
+          - { label: "Community Heroes — 'more' line", name: "communityHeroesMore", widget: "string" }
+          - { label: "CTA text", name: "ctaText", widget: "string" }
+          - label: "CTA link"
+            name: "ctaLink"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+
+      # 10 · Final CTA / Donate
+      - file: "src/data/donate.json"
+        name: "donate"
+        label: "10 · Donate (final CTA)"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Sub", name: "sub", widget: "text" }
+          - label: "Talk-to-us button"
+            name: "talkCta"
+            widget: "object"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Bank transfer card"
+            name: "bank"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Fields"
+                name: "fields"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Value (shown)", name: "value", widget: "string" }
+                  - { label: "Copy value", name: "copy", widget: "string" }
+                  - { label: "Copy button aria-label", name: "aria", widget: "string" }
+              - label: "Notes"
+                name: "notes"
+                widget: "list"
+                field: { label: "Note", name: "note", widget: "text", hint: "HTML allowed" }
+              - { label: "Contact line", name: "contactHtml", widget: "string", hint: "HTML allowed" }
+          - { label: "Signoff", name: "signoff", widget: "string" }

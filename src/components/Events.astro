@@ -1,0 +1,44 @@
+---
+import events from '../data/events.json';
+const { bePart, pastEvents } = events;
+---
+
+<!-- ============ 8 · The Events ============ -->
+<section class="section" id="events" aria-labelledby="events-h">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">{events.eyebrow}</p>
+      <h2 class="h2" id="events-h">{events.heading}</h2>
+    </div>
+    <div class="events-grid">
+      {events.cards.map((c) => (
+        <article class={`event-card reveal${c.delay ? ` ${c.delay}` : ''}`}>
+          <div class="event-img"><span class="event-date">{c.date}</span><img src={c.img} width={c.width} height={c.height} alt={c.alt} loading="lazy" /></div>
+          <div class="event-body"><h3>{c.name}</h3><p class="event-venue">{c.venue}</p><p>{c.blurb}</p></div>
+        </article>
+      ))}
+    </div>
+
+    <div class="bepart reveal">
+      <h3>{bePart.heading}</h3>
+      <p class="bp-sub">{bePart.sub}</p>
+      <div class="bepart-grid">
+        {bePart.items.map((it) => (
+          <a class="bp-item" href={it.mailto}><div class="bp-num"></div><h4>{it.title}</h4><p>{it.text}</p></a>
+        ))}
+      </div>
+    </div>
+
+    <div class="past-events">
+      <div class="pe-head reveal">
+        <p class="pe-eyebrow"><svg class="pe-star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg> {pastEvents.eyebrow}</p>
+        <h3 class="pe-title" set:html={pastEvents.title} />
+      </div>
+      <div class="pe-gallery">
+        {pastEvents.photos.map((p) => (
+          <figure class={`pe-photo reveal${p.delay ? ` ${p.delay}` : ''}`}><img src={p.src} width={p.width} height={p.height} alt={p.alt} loading="lazy" /></figure>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
