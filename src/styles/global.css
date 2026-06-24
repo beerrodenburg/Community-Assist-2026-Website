@@ -520,6 +520,9 @@ a.bp-item:hover h4 { color: var(--blue); }
 .footer-contact a:hover { color: #fff; }
 .footer-bottom { margin-top: clamp(32px,4vw,44px); padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); text-align: center; font-size: .85rem; }
 .footer-bottom a { color: rgba(255,255,255,.8); }
+/* Discreet CMS entry point for the site owner; /admin is login-protected. */
+.footer-bottom .footer-admin { display: block; margin-top: 12px; font-size: .8rem; color: rgba(255,255,255,.4); }
+.footer-bottom .footer-admin:hover { color: #fff; text-decoration: underline; }
 
 /* ---------- Reveal animations ---------- */
 .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
