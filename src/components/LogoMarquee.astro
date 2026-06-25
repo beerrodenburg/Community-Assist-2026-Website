@@ -1,0 +1,23 @@
+---
+import data from '../data/logostrip.json';
+const logos = data.logos;
+---
+
+<!-- ============ 4b · Logo strip (scrolling marquee) ============ -->
+<section class="logostrip reveal" aria-label={data.label || 'Our partners and supporters'}>
+  {data.label && <p class="logostrip-label">{data.label}</p>}
+  <div class="marquee">
+    <div class="marquee-track">
+      <ul class="marquee-group">
+        {logos.map((l) => (
+          <li><img class="mlogo" src={l.src} width={l.width} height={l.height} alt={l.alt} loading="lazy" /></li>
+        ))}
+      </ul>
+      <ul class="marquee-group" aria-hidden="true">
+        {logos.map((l) => (
+          <li><img class="mlogo" src={l.src} width={l.width} height={l.height} alt="" loading="lazy" /></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

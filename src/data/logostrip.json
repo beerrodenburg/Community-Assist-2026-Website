@@ -1,0 +1,95 @@
+{
+  "label": "With thanks to the partners who make it possible",
+  "logos": [
+    {
+      "src": "/assets/img/partners/indosole-white.webp",
+      "alt": "Indosole",
+      "width": 513,
+      "height": 158
+    },
+    {
+      "src": "/assets/img/partners/pnny-white.webp",
+      "alt": "PNNY",
+      "width": 340,
+      "height": 151
+    },
+    {
+      "src": "/assets/img/partners/under-armour-white.webp",
+      "alt": "Under Armour",
+      "width": 436,
+      "height": 116
+    },
+    {
+      "src": "/assets/img/partners/nuanu-social-fund-white.webp",
+      "alt": "Nuanu Social Fund",
+      "width": 673,
+      "height": 116
+    },
+    {
+      "src": "/assets/img/partners/homes-by-heffry-white.webp",
+      "alt": "Homes by Heffry",
+      "width": 516,
+      "height": 108
+    },
+    {
+      "src": "/assets/img/partners/project-black-white.webp",
+      "alt": "Project: Black",
+      "width": 602,
+      "height": 68
+    },
+    {
+      "src": "/assets/img/partners/luigis-white.png",
+      "alt": "Luigi's",
+      "width": 693,
+      "height": 164
+    },
+    {
+      "src": "/assets/img/partners/the-boogaloo-white.webp",
+      "alt": "The Boogaloo",
+      "width": 628,
+      "height": 244
+    },
+    {
+      "src": "/assets/img/partners/tacos-aqui-white.webp",
+      "alt": "Tacos Aqui",
+      "width": 340,
+      "height": 108
+    },
+    {
+      "src": "/assets/img/partners/yuki-white.webp",
+      "alt": "YUKI",
+      "width": 2183,
+      "height": 666
+    },
+    {
+      "src": "/assets/img/partners/oshom-white.webp",
+      "alt": "Oshom",
+      "width": 648,
+      "height": 508
+    },
+    {
+      "src": "/assets/img/partners/room4dessert-white.webp",
+      "alt": "Room4Dessert",
+      "width": 600,
+      "height": 506
+    },
+    {
+      "src": "/assets/img/partners/better-hospitality-ink.webp",
+      "alt": "Better Hospitality",
+      "width": 560,
+      "height": 284
+    },
+    {
+      "src": "/assets/img/partners/hey-rcg-ink.webp",
+      "alt": "hey RCG",
+      "width": 1077,
+      "height": 378
+    },
+    {
+      "src": "/assets/img/partners/smoke-ink.svg",
+      "alt": "Smoke",
+      "width": 113,
+      "height": 34
+    }
+  ]
+}

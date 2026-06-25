@@ -224,6 +224,22 @@ collections:
               - { label: "Text", name: "text", widget: "text" }
               - { label: "Animation delay", name: "delay", widget: "hidden" }
 
+      # 4b · Logo strip (scrolling marquee)
+      - file: "src/data/logostrip.json"
+        name: "logostrip"
+        label: "4b · Logo strip"
+        fields:
+          - { label: "Label (small text above logos)", name: "label", widget: "string", required: false, hint: "Leave blank to hide the label." }
+          - label: "Logos"
+            name: "logos"
+            widget: "list"
+            hint: "Logos scroll in a loop. Use white / transparent logo files — they're shown white on the blue band."
+            fields:
+              - { label: "Logo", name: "src", widget: "image" }
+              - { label: "Alt text", name: "alt", widget: "string" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+
       # 5 · What your gift does
       - file: "src/data/gift.json"
         name: "gift"
@@ -398,7 +414,7 @@ collections:
               - { label: "Alt", name: "alt", widget: "string" }
               - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
               - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
-              - { label: "Full colour?", name: "color", widget: "boolean", default: false }
+              - { label: "Grayscale (for crest logos that don't work as solid black)", name: "mono", widget: "boolean", default: false, required: false }
           - label: "Game Changers"
             name: "gameChangers"
             widget: "list"
@@ -407,11 +423,16 @@ collections:
               - { label: "Alt", name: "alt", widget: "string" }
               - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
               - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
-              - { label: "Full colour?", name: "color", widget: "boolean", default: false }
-          - label: "Community Heroes"
+              - { label: "Grayscale (for crest logos that don't work as solid black)", name: "mono", widget: "boolean", default: false, required: false }
+          - label: "Community Heroes (logos)"
             name: "communityHeroes"
             widget: "list"
-            field: { label: "Business name", name: "name", widget: "string" }
+            fields:
+              - { label: "Logo", name: "src", widget: "image" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Width", name: "width", widget: "number", required: false, value_type: "int" }
+              - { label: "Height", name: "height", widget: "number", required: false, value_type: "int" }
+              - { label: "Grayscale (for crest logos that don't work as solid black)", name: "mono", widget: "boolean", default: false, required: false }
           - { label: "Community Heroes — 'more' line", name: "communityHeroesMore", widget: "string" }
           - { label: "CTA text", name: "ctaText", widget: "string" }
           - label: "CTA link"
@@ -434,6 +455,18 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Link", name: "href", widget: "string" }
+          - label: "QRIS tab (scan to donate)"
+            name: "qris"
+            widget: "object"
+            fields:
+              - { label: "Show QRIS tab", name: "enabled", widget: "boolean", default: true }
+              - { label: "QR code image", name: "image", widget: "image", hint: "The QRIS QR. Keep it crisp/lossless so it always scans." }
+              - { label: "QRIS logo", name: "logo", widget: "image", required: false }
+              - { label: "Merchant name", name: "merchant", widget: "string" }
+              - { label: "NMID", name: "nmid", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "text" }
+              - { label: "Apps line", name: "apps", widget: "string", required: false }
+              - { label: "Note", name: "note", widget: "string", required: false }
           - label: "Bank transfer card"
             name: "bank"
             widget: "object"

@@ -2,6 +2,16 @@
   "heading": "Ready to change a future?",
   "sub": "Every gift goes straight to a child's education, with 69% direct to the scholarship program. Receipts available on request.",
   "talkCta": { "label": "Talk to us", "href": "mailto:communityassist@indosole.com" },
+  "qris": {
+    "enabled": true,
+    "image": "/assets/img/qris-ragam.svg",
+    "logo": "/assets/img/qris-logo.png",
+    "merchant": "RAGAM KEMANUSIAAN INDONESIA",
+    "nmid": "NMID ID1026532445545",
+    "caption": "Open any bank or e-wallet app, scan, and pay.",
+    "apps": "GoPay · OVO · DANA · ShopeePay · BCA · BNI — all QRIS apps",
+    "note": "Goes to the same foundation account as bank transfer."
+  },
   "bank": {
     "title": "Donate by bank transfer",
     "fields": [

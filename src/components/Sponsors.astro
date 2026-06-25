@@ -13,28 +13,30 @@ import sponsors from '../data/sponsors.json';
 
     <div class="sponsor-tier reveal">
       <p class="st-label">Champions</p>
-      <div class="sponsor-grid champions">
+      <div class="logo-row champions">
         {sponsors.champions.map((s) => (
-          <div class="sponsor-chip"><img class={`slogo${s.color ? ' slogo--color' : ''}`} src={s.src} width={s.width} height={s.height} alt={s.alt} loading="lazy" /></div>
+          <img class={`slogo${s.mono ? ' slogo--mono' : ''}`} src={s.src} width={s.width} height={s.height} alt={s.alt} loading="lazy" />
         ))}
       </div>
     </div>
 
     <div class="sponsor-tier reveal">
       <p class="st-label">Game Changers</p>
-      <div class="sponsor-grid changers">
+      <div class="logo-row changers">
         {sponsors.gameChangers.map((s) => (
-          <div class="sponsor-chip"><img class={`slogo${s.color ? ' slogo--color' : ''}`} src={s.src} width={s.width} height={s.height} alt={s.alt} loading="lazy" /></div>
+          <img class={`slogo${s.mono ? ' slogo--mono' : ''}`} src={s.src} width={s.width} height={s.height} alt={s.alt} loading="lazy" />
         ))}
       </div>
     </div>
 
     <div class="sponsor-tier reveal">
       <p class="st-label">Community Heroes</p>
-      <ul class="hero-names">
-        {sponsors.communityHeroes.map((n) => <li class="hero-name">{n}</li>)}
-        <li class="hero-name hero-name--more">{sponsors.communityHeroesMore}</li>
-      </ul>
+      <div class="logo-row heroes">
+        {sponsors.communityHeroes.map((s) => (
+          <img class={`slogo${s.mono ? ' slogo--mono' : ''}`} src={s.src} width={s.width} height={s.height} alt={s.alt} loading="lazy" />
+        ))}
+      </div>
+      <p class="hero-more">{sponsors.communityHeroesMore}</p>
     </div>
 
     <p class="sponsor-cta reveal">{sponsors.ctaText} <a href={sponsors.ctaLink.href}>{sponsors.ctaLink.label}</a></p>

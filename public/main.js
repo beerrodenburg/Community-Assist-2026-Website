@@ -49,10 +49,11 @@
     }
   } catch (e) { /* no-op */ }
 
-  /* ---------- Ways-to-give tabs ---------- */
+  /* ---------- Tabs (scoped per tablist: Ways-to-give, Donate methods, …) ---------- */
   try {
-    var tabs = Array.prototype.slice.call(doc.querySelectorAll('[role="tab"]'));
-    if (tabs.length) {
+    doc.querySelectorAll('[role="tablist"]').forEach(function (list) {
+      var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+      if (!tabs.length) return;
       var selectTab = function (tab) {
         tabs.forEach(function (t) {
           var selected = t === tab;
@@ -79,7 +80,7 @@
           selectTab(tabs[next]);
         });
       });
-    }
+    });
   } catch (e) { /* no-op */ }
 
   /* ---------- Click-to-copy bank fields ---------- */
